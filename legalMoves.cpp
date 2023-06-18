@@ -103,9 +103,9 @@ bool legalMoves::isLegalMove(int orig, int dest,Piece board[64])
 		board[orig].type='q';
 		break;
 	case 'n':
-		if (((!((orig)%8==0||orig==0||(orig-1)%8==0||orig==1))&&(dest==orig-10||dest==orig-17||dest==orig+15||dest==orig+6))||
+		if (((!((orig)%8==0||orig==0))&&(dest==orig-17||dest==orig+15))||
                 ((!((orig-1)%8==0||orig==1||orig%8==0||orig==0))&&(dest==orig-10||dest==orig+6))||
-                ((!((orig-7)%8==0||orig==7||(orig-6)%8==0||orig==6))&&(dest==orig+10||dest==orig+17||dest==orig-15||dest==orig-6))||
+                ((!((orig-7)%8==0||orig==7))&&(dest==orig+17||dest==orig-15))||
                 ((!((orig-6)%8==0||orig==6||(orig-7)%8==0||orig==7))&&(dest==orig+10||dest==orig-6))){
 			return true;
 		}
