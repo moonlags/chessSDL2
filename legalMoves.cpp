@@ -27,7 +27,23 @@ bool legalMoves::isLegalMove(int orig, int dest,Piece board[64])
 			!((orig-7) % 8 == 0 || orig == 7) && (dest == orig + 1 || dest == orig - 7 || dest == orig + 9))
 		{
 			return true;
-		}
+		}else if((dest==orig-2&&dest==58&&board[56].type=='r'&&isLegalMove(56,orig-1,board))){
+            board[59]={board[56].Team,'r'};
+            board[56]={-1,' '};
+            return true;
+        }else if((dest==orig+2&&dest==62&&board[63].type=='r'&&isLegalMove(63,orig+1,board))){
+            board[61]={board[63].Team,'r'};
+            board[63]={-1,' '};
+            return true;
+        }else if((dest==orig+2&&dest==6&&board[7].type=='r'&&isLegalMove(7,orig+1,board))){
+            board[5]={board[7].Team,'r'};
+            board[7]={-1,' '};
+            return true;
+        }else if((dest==orig-2&&dest==2&&board[0].type=='r'&&isLegalMove(0,orig-1,board))){
+            board[3]={board[0].Team,'r'};
+            board[0]={-1,' '};
+            return true;
+        }
 		break;
 	case 'r':
 		for(int i=1;i<=7;i++){
